@@ -1,37 +1,64 @@
-/*farem servir la propietat inline-block i float*/
-/* definicions
-    display= https://developer.mozilla.org/es/docs/Web/CSS/display
-     block: fa que el comportament de l'element sigui com a bloc.
-     inline: l'element es renderitzarà en línia amb altres elements.
-     inline-block: l'element tindrà un comportament barreja entre els dos anteriors.  
-    inherit= https://developer.mozilla.org/es/docs/Web/CSS/inherit 
-    float= és una propietat de posicionament en CSS, és a dir, com s'ubiquen els elements dins d'un document HTML. */
-*{margin:0;padding:0;box-sizing:border-box;font-size:0;}
-body{
-background-color: blue;
-font-family: Arial, sans-serif;
-
-
-}
-a:hover{
-color: gold;
-}            
-nav a{
-    text-decoration:none;
-    color:inherit;
-    font-size:14px;
-    } 
-    nav li{
-    display:inline-block;
-    width:10%;
-    padding:5px 10px;
-    background-color:blue;
-    border:1px solid #000;
-    text-align:center;
-    color:#fff;
-    }
-    nav li:hover{
-    background-color:#fff;
-    color:#000;
-    }
-
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #292929;
+    font-family: 'calibri';
+  }
+  
+  header {
+    background: #03A9F4;
+    width: 100%;
+    clear: both;
+    content:'';
+    display: table;
+  }
+  
+  .menu {
+    width: 900px;
+    margin: 0 auto;
+  }
+  
+  img {
+    width: 120px;
+    height: 50px;
+    float: left;
+    padding: 8px;
+  
+  }
+  
+  nav {
+    float: right;
+  }
+  
+  nav ul li {
+    list-style: none;
+    margin-left: 75px;
+    padding: 12px 0;
+    float: left;
+    position: relative;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+  }
+  
+  nav ul li a::before {
+    display: block;
+    content: '';
+    width: 0%;
+    background: #444;
+    height: 5px;
+    top:0;
+    position: absolute;
+    transition: width 0.2s;
+  }
+  
+  nav ul li a:hover::before {
+    width: 100%;
+  }
